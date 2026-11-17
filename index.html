@@ -722,8 +722,7 @@
       overflow: hidden;
       border-radius: 0 0 var(--radius-card) var(--radius-card);
       background: radial-gradient(120% 90% at 62% 30%, var(--hero-from) 0%, var(--hero-mid) 48%, var(--hero-to) 100%);
-      --fig-h: 27rem;
-      min-height: 100svh;
+      min-height: auto;
       display: flex;
       flex-direction: column
     }
@@ -732,9 +731,9 @@
       flex: 1
     }
 
-    @media (min-width:768px) and (max-width:1023.98px) {
+    @media (min-width:1024px) {
       .hero {
-        --fig-h: 43rem
+        min-height: 100svh
       }
     }
 
@@ -1311,9 +1310,9 @@
       z-index: 20;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      padding-top: 7rem;
-      padding-bottom: calc(var(--fig-h) + 1.25rem)
+      gap: 1.75rem;
+      padding-top: max(5.5rem, calc(env(safe-area-inset-top) + 4.5rem));
+      padding-bottom: 2.75rem
     }
 
     @media (min-width:1024px) {
