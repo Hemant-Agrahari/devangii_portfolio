@@ -66,6 +66,19 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
+    start_port = int(os.environ.get("PORT", 3000))
+    httpd = None
+    for p in range(start_port, start_port + 20):
+        try:
+            httpd = socketserver.TCPServer(("", p), CustomHandler)
+            PORT = p
+            break
+        except OSError as e:
+            if e.errno == 98:
+                continue
+            raise
+    if httpd is None:
+        raise RuntimeError("No available port found")
+    with httpd:
         print(f"Server started at http://localhost:{PORT}")
         httpd.serve_forever()
