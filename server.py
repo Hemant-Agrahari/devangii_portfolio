@@ -37,11 +37,6 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header('Location', '/#about' + (('?' + url.query) if url.query else ''))
             self.end_headers()
             return True
-        elif clean_path == '/contact':
-            self.send_response(301)
-            self.send_header('Location', '/#contact' + (('?' + url.query) if url.query else ''))
-            self.end_headers()
-            return True
         elif clean_path == '/works':
             self.send_response(301)
             self.send_header('Location', '/#works' + (('?' + url.query) if url.query else ''))

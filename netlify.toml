@@ -26,12 +26,6 @@
   force = true
 
 [[redirects]]
-  from = "/contact"
-  to = "/#contact"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/works"
   to = "/#works"
   status = 301
