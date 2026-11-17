@@ -590,11 +590,15 @@
       }
     }
 
-    .nav button {
-      display: block
+    .nav button,
+    .nav a {
+      display: block;
+      color: inherit;
+      text-decoration: none
     }
 
-    .nav button>span {
+    .nav button>span,
+    .nav a>span {
       display: inline-flex;
       align-items: center;
       gap: .25rem;
@@ -5046,8 +5050,8 @@
                 data-ht="button">Skills</span></button></li>
           <li><button data-go="about"><span data-h="y 0 -2|o .8 1" data-hs="320 22" data-ht="button">My
                 story</span></button></li>
-          <li><button data-contact><span data-h="y 0 -2|o .8 1" data-hs="320 22"
-                data-ht="button">Contact</span></button></li>
+          <li><a href="/contact/"><span data-h="y 0 -2|o .8 1" data-hs="320 22"
+                data-ht="button">Contact</span></a></li>
         </ul>
       </nav>
       <div class="hdr__right">
@@ -5488,7 +5492,7 @@
               <li><a href="./" data-go="home">Home</a></li>
               <li><a href="./#skills" data-go="skills">Skills</a></li>
               <li><a href="./#about" data-go="about">My story</a></li>
-              <li><button data-contact>Contact</button></li>
+              <li><a href="/contact/">Contact</a></li>
             </ul>
           </div>
           <div>
@@ -5839,7 +5843,7 @@
       setTimeout(() => { el.hidden = true; el.classList.remove('closing'); startScroll(); after?.(); }, 460);
     }
     // nav menu
-    const NAV = [['Home', 'home'], ['UIUX Design', 0], ['Graphics Design', 1], ['Print Media', 2], ['Mobile App UI', 3], ['Skills', 'skills'], ['My story', 'about'], ['Contact', null]];
+    const NAV = [['Home', 'home'], ['UIUX Design', 0], ['Graphics Design', 1], ['Print Media', 2], ['Mobile App UI', 3], ['Skills', 'skills'], ['My story', 'about'], ['Contact', 'contact']];
     const navm = $('#navm');
     $('#navList').innerHTML = NAV.map(([l, id], i) =>
       `<li><button class="navm__item" style="--d:${i * 45 + 80}ms" data-i="${i}"><small>0${i + 1}</small><span>${l}</span></button></li>`).join('');
@@ -5850,11 +5854,11 @@
     $('#navList').addEventListener('click', e => {
       const b = e.target.closest('.navm__item'); if (!b) return;
       const id = NAV[+b.dataset.i][1];
-      closeNav(() => typeof id === 'number' ? window.openDoor?.(id) : id ? scrollToId(id) : openModal());
+      closeNav(() => typeof id === 'number' ? window.openDoor?.(id) : id === 'contact' ? location.href = '/contact/' : id ? scrollToId(id) : openModal());
     });
     $('#navStart').addEventListener('click', () => closeNav(() => openModal()));
     // request modal
-    const CONTACT_EMAIL = ['hemantkagrahari', 'gmail.com'].join('@');   // where project requests go (assembled here so address-harvesting bots don't find it in the page)
+    const CONTACT_EMAIL = ['dgpithava', 'gmail.com'].join('@');   // where project requests go (assembled here so address-harvesting bots don't find it in the page)
     document.querySelectorAll('[data-mail]').forEach(a => { a.href = 'mailto:' + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; });
     const modal = $('#modal'), form = $('#reqForm');
     let lastFocus = null;
