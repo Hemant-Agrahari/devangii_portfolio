@@ -20,9 +20,8 @@ body{min-height:100vh;background:var(--bg);color:var(--fg);font-family:var(--fon
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid #6B5C5C;outline-offset:3px}
-.glow{position:fixed;inset:0;pointer-events:none;z-index:50;background:var(--room);animation:out .8s ease .15s forwards}
-@keyframes out{to{opacity:0;visibility:hidden}}
-html.embed .glow{animation:none;transition:opacity .45s ease,visibility 0s linear .45s}
+.glow{display:none}
+html.embed .glow{display:block;position:fixed;inset:0;pointer-events:none;z-index:50;background:var(--room);transition:opacity .45s ease,visibility 0s linear .45s}
 html.embed.in .glow{opacity:0;visibility:hidden}
 html.embed.out .glow{opacity:1;visibility:visible;transition:opacity .4s ease}
 
@@ -282,7 +281,7 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 .rn__in{min-width:0}
 .rn nav{min-width:0}
 </style>
-<link rel="canonical" href="https://hemant-agrahari.netlify.app/graphic-designer/" />
+<link rel="canonical" href="https://devangi-pithava.netlify.app/print-media/" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <meta name="author" content="Devangi Pithava" />
 <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -291,20 +290,15 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Devangi Pithava" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="https://hemant-agrahari.netlify.app/graphic-designer/" />
-<meta property="og:title" content="Freelance Graphic Designer — Devangi Pithava" />
-<meta property="og:description" content="Brand identity, social media creatives, posters and logo design. Freelance graphic designer working remotely with clients in the US, UK and worldwide." />
-<meta property="og:image" content="https://hemant-agrahari.netlify.app/og.jpg" />
-<meta property="og:image:secure_url" content="https://hemant-agrahari.netlify.app/og.jpg" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Devangi Pithava&#39;s portfolio" />
+<meta property="og:url" content="https://devangi-pithava.netlify.app/print-media/" />
+<meta property="og:title" content="Print Media &amp; Packaging Designer — Devangi Pithava" />
+<meta property="og:description" content="Physical print collateral, packaging design, brochures, booklets, and brand marks by Devangi Pithava." />
+<meta property="og:image" content="/og.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Freelance Graphic Designer — Devangi Pithava" />
-<meta name="twitter:description" content="Brand identity, social media creatives, posters and logo design. Freelance graphic designer working remotely with clients in the US, UK and worldwide." />
-<meta name="twitter:image" content="https://hemant-agrahari.netlify.app/og.jpg" />
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://hemant-agrahari.netlify.app/#hemant","name":"Devangi Pithava","url":"https://hemant-agrahari.netlify.app","jobTitle":"Freelance Developer, Designer and Photographer","image":"https://hemant-agrahari.netlify.app/og.jpg","description":"Freelance web and iOS developer, UI/UX designer, graphic designer and photographer working remotely with clients worldwide.","knowsAbout":["Web development","iOS app development","UI/UX design","Graphic design","Brand identity","Photography"],"address":{"@type":"PostalAddress","addressCountry":"IN"},"knowsLanguage":["en"],"worksFor":{"@id":"https://hemant-agrahari.netlify.app/#org"}},{"@type":"Organization","@id":"https://hemant-agrahari.netlify.app/#org","name":"Devangi Pithava — Design & Development","alternateName":"Devangi Pithava","url":"https://hemant-agrahari.netlify.app","image":"https://hemant-agrahari.netlify.app/og.jpg","logo":{"@type":"ImageObject","url":"https://hemant-agrahari.netlify.app/icon-512.png","width":512,"height":512},"founder":{"@id":"https://hemant-agrahari.netlify.app/#hemant"},"email":"hemantkagrahari@gmail.com","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hemantkagrahari@gmail.com","availableLanguage":"en","areaServed":["US","GB","CA","AU"]},"description":"Freelance web development, iOS app development, UI/UX design and graphic design, delivered remotely.","areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Canada"},{"@type":"Country","name":"Australia"},"Worldwide"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web development","description":"Websites and web applications designed and built end to end."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"iOS app development","description":"Native iOS apps and games, from first sketch to the App Store."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"UI/UX design","description":"Product and interface design: user flows, wireframes and finished UI."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Graphic design","description":"Brand identity, social media creatives, posters and logos."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Photography","description":"Portrait, event and street photography."}}]}},{"@type":"WebSite","@id":"https://hemant-agrahari.netlify.app/#site","url":"https://hemant-agrahari.netlify.app","name":"Devangi Pithava — Portfolio","publisher":{"@id":"https://hemant-agrahari.netlify.app/#hemant"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hemant-agrahari.netlify.app/"},{"@type":"ListItem","position":2,"name":"Freelance Graphic Designer","item":"https://hemant-agrahari.netlify.app/graphic-designer/"}]}]}</script>
+<meta name="twitter:title" content="Print Media &amp; Packaging Designer — Devangi Pithava" />
+<meta name="twitter:description" content="Physical print collateral, packaging design, brochures, booklets, and brand marks by Devangi Pithava." />
+<meta name="twitter:image" content="/og.jpg" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://devangi-pithava.netlify.app/#devangi","name":"Devangi Pithava","url":"https://devangi-pithava.netlify.app","jobTitle":"UI/UX, Graphic & Print Media Designer","email":"dgpithava@gmail.com","description":"Freelance UI/UX designer, graphic designer, and print media specialist.","knowsAbout":["Print Media","Packaging Design","Brochures","UI/UX Design","Graphic Design","Brand Identity"]},{"@type":"WebSite","@id":"https://devangi-pithava.netlify.app/#site","url":"https://devangi-pithava.netlify.app","name":"Devangi Pithava — Portfolio","publisher":{"@id":"https://devangi-pithava.netlify.app/#devangi"}}]}</script>
 <meta name="google-site-verification" content="dB3k2roAkI1S8861shwLsjVKNyl1q-TjchYYJWrG-18" /></head>
 <body>
 <div class="glow" aria-hidden="true"></div>
@@ -333,125 +327,120 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
     <span class="how"><i></i>Scroll to explore print work</span>
   </section>
   </div>
-  <section class="worlds" id="worlds" aria-label="Graphic design work"><!--pre-->
-  <section class="world" data-k="qodoro" data-i="0" style="--wbg:#1A1818;--wfg:#E8E4E0;--wacc:#C4B0B0" aria-label="Qodoro Realty">
+  <section class="worlds" id="worlds" aria-label="Print media and packaging work"><!--pre-->
+  <section class="world" data-k="think4earth" data-i="0" style="--wbg:#EFECE8;--wfg:#241E1C;--wacc:#D87A38" aria-label="Think4Earth Packaging">
     <div class="pin">
       <header class="w-head">
-        <p class="w-kicker"><span>01</span><i></i><span>Print Collateral · Luxury Real Estate</span></p>
-        <h2 class="w-name">Qodoro <em>Realty</em></h2>
-        <div><p class="w-desc">Brochures and property lookbooks for a real-estate brand built on warm tones, editorial type, and calm architecture.</p><ul class="w-tags"><li>Editorial layouts</li><li>Property Brochures</li><li>Brand guidelines</li></ul></div>
+        <p class="w-kicker"><span>01</span><i></i><span>Packaging &amp; Print · Eco-Friendly Goods</span></p>
+        <h2 class="w-name">Think4Earth <em>Packaging</em></h2>
+        <div><p class="w-desc">Packaging design and kraft paper shopping bags for Think4Earth reusable bread bags: featuring custom pouch mockups, nutrition callouts, QR integration, and clean earth-toned typography.</p><ul class="w-tags"><li>Packaging design</li><li>Pouch Mockups</li><li>Kraft Paper Bags</li><li>Print Ready</li></ul></div>
       </header>
       <div class="line"><div class="track">
-        <figure class="print" data-ii="0" style="--ar:0.8">
+        <figure class="print" data-ii="0" style="--ar:1.85">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 1"><img src="qod-1.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="1" style="--ar:0.8">
+          <button class="paper" aria-label="Open Think4Earth Complete Packaging Suite 1"><img src="think4earth-full.webp" alt="" loading="eager" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print" data-ii="1" style="--ar:0.436">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 2"><img src="qod-16.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="2" style="--ar:0.8">
+          <button class="paper" aria-label="Open Kraft Shopping Bag Mockup 2"><img src="think4earth-bag.webp" alt="" loading="eager" decoding="async" width="290" height="665"></button>
+        </figure><figure class="print" data-ii="2" style="--ar:0.625">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 3"><img src="qod-17.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="3" style="--ar:0.8">
+          <button class="paper" aria-label="Open Bread Bag Pouch Closeup 3"><img src="think4earth-pouch.webp" alt="" loading="eager" decoding="async" width="200" height="320"></button>
+        </figure><figure class="print" data-ii="3" style="--ar:0.901">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 4"><img src="qod-26.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="4" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 5"><img src="qod-27.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="5" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 6"><img src="qod-31.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="6" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 7"><img src="qod-32.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="7" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 8"><img src="qod-center.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="8" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Qodoro Realty 9"><img src="qod-left.webp" alt="" loading="eager" decoding="async" width="800" height="1000"></button>
+          <button class="paper" aria-label="Open Artisan Packaging Presentation 4"><img src="think4earth-bread.webp" alt="" loading="eager" decoding="async" width="617" height="685"></button>
         </figure>
       </div></div>
       <div class="w-foot"><div class="w-bar"><i></i></div><span class="w-hint">Scroll →</span></div>
     </div>
   </section>
-  <section class="world" data-k="himspring" data-i="1" style="--wbg:#E8E4E0;--wfg:#1A1818;--wacc:#6B4F4F" aria-label="Himspring">
+  <section class="world" data-k="buildfirms" data-i="1" style="--wbg:#25211E;--wfg:#E8E4E0;--wacc:#E59838" aria-label="Build Firms Agreement">
     <div class="pin">
       <header class="w-head">
-        <p class="w-kicker"><span>02</span><i></i><span>Packaging &amp; Print · Premium Water</span></p>
-        <h2 class="w-name"><em>Himspring</em></h2>
-        <div><p class="w-desc">Packaging and print materials for a premium Himalayan water brand: clean bottle labels, carton packaging, and promotional banners.</p><ul class="w-tags"><li>Packaging design</li><li>Print Collateral</li><li>Brand Identity</li></ul></div>
+        <p class="w-kicker"><span>02</span><i></i><span>Architectural Print · Landscape Agreement</span></p>
+        <h2 class="w-name">Build Firms <em>Agreement</em></h2>
+        <div><p class="w-desc">Landscape concept design agreement booklet and service catalogue for Build Firms: architectural spreads, pricing structures, guarantee layouts, and client testimonial framing.</p><ul class="w-tags"><li>Landscape Booklet</li><li>Agreement Catalogue</li><li>Editorial Typography</li><li>Print Specs</li></ul></div>
       </header>
       <div class="line"><div class="track">
-        <figure class="print" data-ii="0" style="--ar:0.8">
+        <figure class="print" data-ii="0" style="--ar:1.85">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 1"><img src="him-27.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="1" style="--ar:0.8">
+          <button class="paper" aria-label="Open Build Firms Agreement Suite 1"><img src="buildfirms-full.webp" alt="" loading="lazy" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print" data-ii="1" style="--ar:1.418">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 2"><img src="him-28.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="2" style="--ar:0.8">
+          <button class="paper" aria-label="Open Concept Design Agreement Cover 2"><img src="buildfirms-cover.webp" alt="" loading="lazy" decoding="async" width="560" height="395"></button>
+        </figure><figure class="print" data-ii="2" style="--ar:1.55">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 3"><img src="him-31.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="3" style="--ar:0.8">
+          <button class="paper" aria-label="Open Internal Editorial Spreads 3"><img src="buildfirms-spread.webp" alt="" loading="lazy" decoding="async" width="620" height="400"></button>
+        </figure><figure class="print" data-ii="3" style="--ar:1.692">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 4"><img src="him-32.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="4" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 5"><img src="him-33.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="5" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 6"><img src="him-37.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="6" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 7"><img src="him-43.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="7" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 8"><img src="him-44.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="8" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 9"><img src="him-45.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="9" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 10"><img src="him-47.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
-        </figure><figure class="print" data-ii="10" style="--ar:0.8">
-          <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Himspring 11"><img src="him-49.webp" alt="" loading="lazy" decoding="async" width="800" height="1000"></button>
+          <button class="paper" aria-label="Open Agreement Pricing Table 4"><img src="buildfirms-price.webp" alt="" loading="lazy" decoding="async" width="440" height="260"></button>
         </figure>
       </div></div>
-      <div class="w-foot"><div class="w-bar"><i></i></div><span class="w-hint">Himspring</span></div>
+      <div class="w-foot"><div class="w-bar"><i></i></div><span class="w-hint">Build Firms</span></div>
     </div>
   </section>
-  <section class="world" data-k="posters" data-i="2" style="--wbg:#1A1818;--wfg:#E8E4E0;--wacc:#C4B0B0" aria-label="Posters &amp; logos">
+  <section class="world" data-k="brochures" data-i="2" style="--wbg:#16191F;--wfg:#E8EAF0;--wacc:#E85D36" aria-label="Brochures &amp; Whitepapers">
     <div class="pin">
       <header class="w-head">
-        <p class="w-kicker"><span>03</span><i></i><span>Events &amp; Identity · Print Materials</span></p>
-        <h2 class="w-name">Posters & logos</h2>
-        <div><p class="w-desc">Posters for college fests and clubs, festive creatives and logo marks, from bold type-led launches to clean identities.</p><ul class="w-tags"><li>Event posters</li><li>Logo design</li><li>Typography</li></ul></div>
+        <p class="w-kicker"><span>03</span><i></i><span>Corporate Collateral · Tri-Fold &amp; Whitepapers</span></p>
+        <h2 class="w-name">Brochures &amp; <em>Whitepapers</em></h2>
+        <div><p class="w-desc">Corporate tri-fold brochures and technical case study publications: TradeCult industrial offerings catalogue and Birds Eye Aerial Drones wildfire mitigation whitepapers.</p><ul class="w-tags"><li>Tri-Fold Brochure</li><li>Technical Whitepaper</li><li>Corporate Editorial</li><li>Infographics</li></ul></div>
       </header>
       <div class="line"><div class="track">
-        <figure class="print" data-ii="0" style="--ar:1.7679558011049723">
+        <figure class="print" data-ii="0" style="--ar:1.85">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 1"><img src="pos-theme.webp" alt="" loading="lazy" decoding="async" width="1600" height="905"></button>
-        </figure><figure class="print" data-ii="1" style="--ar:0.562">
+          <button class="paper" aria-label="Open TradeCult Industrial Tri-Fold 1"><img src="tradecult-full.webp" alt="" loading="lazy" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print" data-ii="1" style="--ar:0.807">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 2"><img src="pos-club-showcase.webp" alt="" loading="lazy" decoding="async" width="562" height="1000"></button>
-        </figure><figure class="print" data-ii="2" style="--ar:0.707">
+          <button class="paper" aria-label="Open Offerings Inside Spread 2"><img src="tradecult-inside.webp" alt="" loading="lazy" decoding="async" width="440" height="545"></button>
+        </figure><figure class="print" data-ii="2" style="--ar:0.966">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 3"><img src="pos-recruitment-poster.webp" alt="" loading="lazy" decoding="async" width="707" height="1000"></button>
-        </figure><figure class="print" data-ii="3" style="--ar:1">
+          <button class="paper" aria-label="Open Corporate Story Panels 3"><img src="tradecult-outside.webp" alt="" loading="lazy" decoding="async" width="425" height="440"></button>
+        </figure><figure class="print" data-ii="3" style="--ar:1.525">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 4"><img src="pos-wbt-26-jan.webp" alt="" loading="lazy" decoding="async" width="1000" height="1000"></button>
-        </figure><figure class="print dark" data-ii="4" style="--ar:1">
+          <button class="paper" aria-label="Open Folded Brochure Stack 4"><img src="tradecult-stack.webp" alt="" loading="lazy" decoding="async" width="305" height="200"></button>
+        </figure><figure class="print" data-ii="4" style="--ar:1.85">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 5"><img src="logo-foodicted.webp" alt="" loading="lazy" decoding="async" width="500" height="500"></button>
-        </figure><figure class="print dark" data-ii="5" style="--ar:1.5314285714285714">
+          <button class="paper" aria-label="Open Wildfire Mitigation Whitepaper 5"><img src="drone-full.webp" alt="" loading="lazy" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print" data-ii="5" style="--ar:0.547">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 6"><img src="logo-wbt-logo.webp" alt="" loading="lazy" decoding="async" width="1072" height="700"></button>
-        </figure><figure class="print dark" data-ii="6" style="--ar:1">
+          <button class="paper" aria-label="Open Technical Publication Cover 6"><img src="drone-cover.webp" alt="" loading="lazy" decoding="async" width="320" height="585"></button>
+        </figure><figure class="print" data-ii="6" style="--ar:0.476">
           <span class="peg" aria-hidden="true"></span>
-          <button class="paper" aria-label="Open Posters &amp; logos 7"><img src="logo-rishi-photography.webp" alt="" loading="lazy" decoding="async" width="500" height="500"></button>
+          <button class="paper" aria-label="Open Case Study Data Spreads 7"><img src="drone-sheet.webp" alt="" loading="lazy" decoding="async" width="200" height="420"></button>
         </figure>
       </div></div>
-      <div class="w-foot"><div class="w-bar"><i></i></div><span class="w-hint">Posters &amp; logos</span></div>
+      <div class="w-foot"><div class="w-bar"><i></i></div><span class="w-hint">Brochures &amp; Whitepapers</span></div>
+    </div>
+  </section>
+  <section class="world" data-k="logofolio" data-i="3" style="--wbg:#1A1818;--wfg:#E8E4E0;--wacc:#4ECCA3" aria-label="LogoFolio &amp; Marks">
+    <div class="pin">
+      <header class="w-head">
+        <p class="w-kicker"><span>04</span><i></i><span>Brand Marks · Identity &amp; Prepress</span></p>
+        <h2 class="w-name">LogoFolio &amp; <em>Marks</em></h2>
+        <div><p class="w-desc">Distinctive brand identities and print-ready marks: Essential Housing Foundation embossed key mark, Planting Organic serif emblem, and Stratica Total Care Pharmacy healthcare identity.</p><ul class="w-tags"><li>Brand Identity</li><li>Logo Design</li><li>Print Prepress</li><li>Vector Marks</li></ul></div>
+      </header>
+      <div class="line"><div class="track">
+        <figure class="print" data-ii="0" style="--ar:1.85">
+          <span class="peg" aria-hidden="true"></span>
+          <button class="paper" aria-label="Open Essential Housing Foundation Presentation 1"><img src="logo-essential-housing.webp" alt="" loading="lazy" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print dark" data-ii="1" style="--ar:1.136">
+          <span class="peg" aria-hidden="true"></span>
+          <button class="paper" aria-label="Open Cityscape Key Emboss Mark 2"><img src="logo-essential-mark.webp" alt="" loading="lazy" decoding="async" width="500" height="440"></button>
+        </figure><figure class="print" data-ii="2" style="--ar:1.85">
+          <span class="peg" aria-hidden="true"></span>
+          <button class="paper" aria-label="Open Planting Organic Brand Showcase 3"><img src="logo-planting-organic.webp" alt="" loading="lazy" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print dark" data-ii="3" style="--ar:2.333">
+          <span class="peg" aria-hidden="true"></span>
+          <button class="paper" aria-label="Open Planting Organic Emblem 4"><img src="logo-planting-mark.webp" alt="" loading="lazy" decoding="async" width="560" height="240"></button>
+        </figure><figure class="print" data-ii="4" style="--ar:1.85">
+          <span class="peg" aria-hidden="true"></span>
+          <button class="paper" aria-label="Open Stratica Pharmacy Card Mockup 5"><img src="logo-stratica-pharmacy.webp" alt="" loading="lazy" decoding="async" width="1267" height="685"></button>
+        </figure><figure class="print dark" data-ii="5" style="--ar:1.25">
+          <span class="peg" aria-hidden="true"></span>
+          <button class="paper" aria-label="Open Stratica Total Care Mark 6"><img src="logo-stratica-mark.webp" alt="" loading="lazy" decoding="async" width="350" height="280"></button>
+        </figure>
+      </div></div>
+      <div class="w-foot"><div class="w-bar"><i></i></div><span class="w-hint">LogoFolio &amp; Marks</span></div>
     </div>
   </section><!--/pre--></section>
 </main>
@@ -484,19 +473,50 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 </div>
 
 <script>
-const GD = {"himspring": [{"f": "him-27.webp", "w": 800, "h": 1000, "k": "him-27"}, {"f": "him-28.webp", "w": 800, "h": 1000, "k": "him-28"}, {"f": "him-31.webp", "w": 800, "h": 1000, "k": "him-31"}, {"f": "him-32.webp", "w": 800, "h": 1000, "k": "him-32"}, {"f": "him-33.webp", "w": 800, "h": 1000, "k": "him-33"}, {"f": "him-37.webp", "w": 800, "h": 1000, "k": "him-37"}, {"f": "him-43.webp", "w": 800, "h": 1000, "k": "him-43"}, {"f": "him-44.webp", "w": 800, "h": 1000, "k": "him-44"}, {"f": "him-45.webp", "w": 800, "h": 1000, "k": "him-45"}, {"f": "him-47.webp", "w": 800, "h": 1000, "k": "him-47"}, {"f": "him-49.webp", "w": 800, "h": 1000, "k": "him-49"}], "qodoro": [{"f": "qod-1.webp", "w": 800, "h": 1000, "k": "qod-1"}, {"f": "qod-16.webp", "w": 800, "h": 1000, "k": "qod-16"}, {"f": "qod-17.webp", "w": 800, "h": 1000, "k": "qod-17"}, {"f": "qod-26.webp", "w": 800, "h": 1000, "k": "qod-26"}, {"f": "qod-27.webp", "w": 800, "h": 1000, "k": "qod-27"}, {"f": "qod-31.webp", "w": 800, "h": 1000, "k": "qod-31"}, {"f": "qod-32.webp", "w": 800, "h": 1000, "k": "qod-32"}, {"f": "qod-center.webp", "w": 800, "h": 1000, "k": "qod-center"}, {"f": "qod-left.webp", "w": 800, "h": 1000, "k": "qod-left"}], "posters": [{"f": "pos-theme.webp", "w": 1600, "h": 905, "k": "pos-theme"}, {"f": "pos-club-showcase.webp", "w": 562, "h": 1000, "k": "pos-club-showcase"}, {"f": "pos-recruitment-poster.webp", "w": 707, "h": 1000, "k": "pos-recruitment-poster"}, {"f": "pos-wbt-26-jan.webp", "w": 1000, "h": 1000, "k": "pos-wbt-26-jan"}], "logos": [{"f": "logo-foodicted.webp", "w": 500, "h": 500, "k": "logo-foodicted"}, {"f": "logo-wbt-logo.webp", "w": 1072, "h": 700, "k": "logo-wbt-logo"}, {"f": "logo-rishi-photography.webp", "w": 500, "h": 500, "k": "logo-rishi-photography"}]};
-const pick = (list, keys) => keys.map(k => list.find(it => it.k === k)).filter(Boolean);
+const GD = {
+  "think4earth": [
+    { "f": "think4earth-full.webp", "w": 1267, "h": 685, "title": "Think4Earth Complete Packaging Suite" },
+    { "f": "think4earth-bag.webp", "w": 290, "h": 665, "title": "Kraft Shopping Bag Mockup" },
+    { "f": "think4earth-pouch.webp", "w": 200, "h": 320, "title": "Bread Bag Pouch Closeup" },
+    { "f": "think4earth-bread.webp", "w": 617, "h": 685, "title": "Artisan Packaging Presentation" }
+  ],
+  "buildfirms": [
+    { "f": "buildfirms-full.webp", "w": 1267, "h": 685, "title": "Build Firms Agreement Suite" },
+    { "f": "buildfirms-cover.webp", "w": 560, "h": 395, "title": "Concept Design Agreement Cover" },
+    { "f": "buildfirms-spread.webp", "w": 620, "h": 400, "title": "Internal Editorial Spreads" },
+    { "f": "buildfirms-price.webp", "w": 440, "h": 260, "title": "Agreement Pricing Table" }
+  ],
+  "brochures": [
+    { "f": "tradecult-full.webp", "w": 1267, "h": 685, "title": "TradeCult Industrial Tri-Fold" },
+    { "f": "tradecult-inside.webp", "w": 440, "h": 545, "title": "Offerings Inside Spread" },
+    { "f": "tradecult-outside.webp", "w": 425, "h": 440, "title": "Corporate Story Panels" },
+    { "f": "tradecult-stack.webp", "w": 305, "h": 200, "title": "Folded Brochure Stack" },
+    { "f": "drone-full.webp", "w": 1267, "h": 685, "title": "Wildfire Mitigation Whitepaper" },
+    { "f": "drone-cover.webp", "w": 320, "h": 585, "title": "Technical Publication Cover" },
+    { "f": "drone-sheet.webp", "w": 200, "h": 420, "title": "Case Study Data Spreads" }
+  ],
+  "logofolio": [
+    { "f": "logo-essential-housing.webp", "w": 1267, "h": 685, "title": "Essential Housing Foundation Presentation" },
+    { "f": "logo-essential-mark.webp", "w": 500, "h": 440, "title": "Cityscape Key Emboss Mark", "dark": true },
+    { "f": "logo-planting-organic.webp", "w": 1267, "h": 685, "title": "Planting Organic Brand Showcase" },
+    { "f": "logo-planting-mark.webp", "w": 560, "h": 240, "title": "Planting Organic Emblem", "dark": true },
+    { "f": "logo-stratica-pharmacy.webp", "w": 1267, "h": 685, "title": "Stratica Pharmacy Card Mockup" },
+    { "f": "logo-stratica-mark.webp", "w": 350, "h": 280, "title": "Stratica Total Care Mark", "dark": true }
+  ]
+};
 const WORLDS = [
-  { k: 'qodoro', name: 'Qodoro <em>Realty</em>', label: 'Qodoro Realty', kicker: 'Print Collateral · Luxury Real Estate',
-    desc: 'Brochures and property lookbooks for a real-estate brand built on warm tones, editorial type, and calm architecture.',
-    tags: ['Editorial layouts', 'Property Brochures', 'Brand guidelines'], bg: '#1A1818', fg: '#E8E4E0', acc: '#C4B0B0', items: pick(GD.qodoro, ['qod-1','qod-16','qod-17','qod-26','qod-27','qod-31','qod-32','qod-center','qod-left']) },
-  { k: 'himspring', name: '<em>Himspring</em>', label: 'Himspring', kicker: 'Packaging & Print · Premium Water',
-    desc: 'Packaging and print materials for a premium Himalayan water brand: clean bottle labels, carton packaging, and promotional banners.',
-    tags: ['Packaging design', 'Print Collateral', 'Brand Identity'], bg: '#E8E4E0', fg: '#1A1818', acc: '#6B4F4F', items: pick(GD.himspring, ['him-27','him-28','him-31','him-32','him-33','him-37','him-43','him-44','him-45','him-47','him-49']) },
-  { k: 'posters', name: 'Posters & logos', label: 'Posters & logos', kicker: 'Events & Identity · Print Materials',
-    desc: 'Posters for college fests and clubs, festive creatives and logo marks, from bold type-led launches to clean identities.',
-    tags: ['Event posters', 'Logo design', 'Typography'], bg: '#1A1818', fg: '#E8E4E0', acc: '#C4B0B0',
-    items: GD.posters.filter(p => p.k !== 'pos-theme-launch').concat(GD.logos.map(l => Object.assign({ dark: true }, l))) }
+  { k: 'think4earth', name: 'Think4Earth <em>Packaging</em>', label: 'Think4Earth Packaging', kicker: 'Packaging & Print · Eco-Friendly Goods',
+    desc: 'Packaging design and craft paper shopping bags for Think4Earth reusable bread bags: featuring custom pouch mockups, nutrition callouts, QR integration, and clean earth-toned typography.',
+    tags: ['Packaging design', 'Pouch Mockups', 'Kraft Paper Bags', 'Print Ready'], bg: '#EFECE8', fg: '#241E1C', acc: '#D87A38', items: GD.think4earth },
+  { k: 'buildfirms', name: 'Build Firms <em>Agreement</em>', label: 'Build Firms Agreement', kicker: 'Architectural Print · Landscape Agreement',
+    desc: 'Landscape concept design agreement booklet and service catalogue for Build Firms: architectural spreads, pricing structures, guarantee layouts, and client testimonial framing.',
+    tags: ['Landscape Booklet', 'Agreement Catalogue', 'Editorial Typography', 'Print Specs'], bg: '#25211E', fg: '#E8E4E0', acc: '#E59838', items: GD.buildfirms },
+  { k: 'brochures', name: 'Brochures &amp; <em>Whitepapers</em>', label: 'Brochures & Whitepapers', kicker: 'Corporate Collateral · Tri-Fold & Whitepapers',
+    desc: 'Corporate tri-fold brochures and technical case study publications: TradeCult industrial offerings catalogue and Birds Eye Aerial Drones wildfire mitigation whitepapers.',
+    tags: ['Tri-Fold Brochure', 'Technical Whitepaper', 'Corporate Editorial', 'Infographics'], bg: '#16191F', fg: '#E8EAF0', acc: '#E85D36', items: GD.brochures },
+  { k: 'logofolio', name: 'LogoFolio &amp; <em>Marks</em>', label: 'LogoFolio & Marks', kicker: 'Brand Marks · Identity & Prepress',
+    desc: 'Distinctive brand identities and print-ready marks: Essential Housing Foundation embossed key mark, Planting Organic serif emblem, and Stratica Total Care Pharmacy healthcare identity.',
+    tags: ['Brand Identity', 'Logo Design', 'Print Prepress', 'Vector Marks'], bg: '#1A1818', fg: '#E8E4E0', acc: '#4ECCA3', items: GD.logofolio }
 ];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const host = document.getElementById('worlds');
