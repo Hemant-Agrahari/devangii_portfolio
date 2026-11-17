@@ -484,32 +484,16 @@ html[data-mode="dark"] .skel::after{background-image:linear-gradient(100deg,#231
 </div>
 
 <script>
-const GD = {
-  "jagatjit": [{"f": "jagatjit.webp", "w": 1440, "h": 900, "k": "jagatjit"}],
-  "cybervantage": [{"f": "cybervantage.webp", "w": 1440, "h": 900, "k": "cybervantage"}],
-  "fireflies": [{"f": "fireflies.webp", "w": 1440, "h": 900, "k": "fireflies"}],
-  "urbatect": [{"f": "urbatect.webp", "w": 1440, "h": 900, "k": "urbatect"}],
-  "straticapharma": [{"f": "straticapharma.webp", "w": 1440, "h": 900, "k": "straticapharma"}],
-  "posters": [{"f": "pos-theme.webp", "w": 1600, "h": 905, "k": "pos-theme"}, {"f": "pos-club-showcase.webp", "w": 562, "h": 1000, "k": "pos-club-showcase"}, {"f": "pos-recruitment-poster.webp", "w": 707, "h": 1000, "k": "pos-recruitment-poster"}, {"f": "pos-wbt-26-jan.webp", "w": 1000, "h": 1000, "k": "pos-wbt-26-jan"}],
-  "logos": [{"f": "logo-foodicted.webp", "w": 500, "h": 500, "k": "logo-foodicted"}, {"f": "logo-wbt-logo.webp", "w": 1072, "h": 700, "k": "logo-wbt-logo"}, {"f": "logo-rishi-photography.webp", "w": 500, "h": 500, "k": "logo-rishi-photography"}]
-};
+const GD = {"himspring": [{"f": "him-27.webp", "w": 800, "h": 1000, "k": "him-27"}, {"f": "him-28.webp", "w": 800, "h": 1000, "k": "him-28"}, {"f": "him-31.webp", "w": 800, "h": 1000, "k": "him-31"}, {"f": "him-32.webp", "w": 800, "h": 1000, "k": "him-32"}, {"f": "him-33.webp", "w": 800, "h": 1000, "k": "him-33"}, {"f": "him-37.webp", "w": 800, "h": 1000, "k": "him-37"}, {"f": "him-43.webp", "w": 800, "h": 1000, "k": "him-43"}, {"f": "him-44.webp", "w": 800, "h": 1000, "k": "him-44"}, {"f": "him-45.webp", "w": 800, "h": 1000, "k": "him-45"}, {"f": "him-47.webp", "w": 800, "h": 1000, "k": "him-47"}, {"f": "him-49.webp", "w": 800, "h": 1000, "k": "him-49"}], "qodoro": [{"f": "qod-1.webp", "w": 800, "h": 1000, "k": "qod-1"}, {"f": "qod-16.webp", "w": 800, "h": 1000, "k": "qod-16"}, {"f": "qod-17.webp", "w": 800, "h": 1000, "k": "qod-17"}, {"f": "qod-26.webp", "w": 800, "h": 1000, "k": "qod-26"}, {"f": "qod-27.webp", "w": 800, "h": 1000, "k": "qod-27"}, {"f": "qod-31.webp", "w": 800, "h": 1000, "k": "qod-31"}, {"f": "qod-32.webp", "w": 800, "h": 1000, "k": "qod-32"}, {"f": "qod-center.webp", "w": 800, "h": 1000, "k": "qod-center"}, {"f": "qod-left.webp", "w": 800, "h": 1000, "k": "qod-left"}], "posters": [{"f": "pos-theme.webp", "w": 1600, "h": 905, "k": "pos-theme"}, {"f": "pos-club-showcase.webp", "w": 562, "h": 1000, "k": "pos-club-showcase"}, {"f": "pos-recruitment-poster.webp", "w": 707, "h": 1000, "k": "pos-recruitment-poster"}, {"f": "pos-wbt-26-jan.webp", "w": 1000, "h": 1000, "k": "pos-wbt-26-jan"}], "logos": [{"f": "logo-foodicted.webp", "w": 500, "h": 500, "k": "logo-foodicted"}, {"f": "logo-wbt-logo.webp", "w": 1072, "h": 700, "k": "logo-wbt-logo"}, {"f": "logo-rishi-photography.webp", "w": 500, "h": 500, "k": "logo-rishi-photography"}]};
+const pick = (list, keys) => keys.map(k => list.find(it => it.k === k)).filter(Boolean);
 const WORLDS = [
-  { k: 'jagatjit', name: 'Jagatjit <em>Machinery</em>', label: 'Jagatjit', kicker: 'Print Collateral · Industrial Machinery',
-    desc: 'Product catalogues, technical specification brochures, and dealer network banners for an agricultural machinery pioneer.',
-    tags: ['Product Catalogues', 'Technical Brochures', 'Print Specs'], bg: '#1A1818', fg: '#E8E4E0', acc: '#C4B0B0', items: GD.jagatjit },
-  { k: 'cybervantage', name: 'Cyber <em>Vantage</em>', label: 'Cyber Vantage', kicker: 'Enterprise Print · Cybersecurity AI',
-    desc: 'Enterprise whitepaper layouts, executive security briefs, conference booth backdrops, and marketing collateral.',
-    tags: ['Whitepapers', 'Executive Briefs', 'Conference Banners'], bg: '#0D1527', fg: '#E8E4E0', acc: '#31A8FF', items: GD.cybervantage },
-  { k: 'fireflies', name: 'Fireflies <em>Lighting</em>', label: 'Fireflies', kicker: 'Editorial Print · Architectural Lighting',
-    desc: 'Curated project monographs, exhibition print lookbooks, and luxury lighting design portfolio collateral.',
-    tags: ['Architectural Lookbook', 'Exhibition Print', 'Editorial Design'], bg: '#111111', fg: '#F3EEEC', acc: '#FF9A00', items: GD.fireflies },
-  { k: 'urbatect', name: 'Urbatect <em>Development</em>', label: 'Urbatect', kicker: 'Real Estate · Print & Signage',
-    desc: 'Masterplan brochures, sales lounge lookbooks, investor print folders, and architectural site signage.',
-    tags: ['Masterplan Brochures', 'Sales Collateral', 'Site Signage'], bg: '#25211E', fg: '#E8E4E0', acc: '#D9C6C6', items: GD.urbatect },
-  { k: 'straticapharma', name: 'Stratica <em>Pharma</em>', label: 'Stratica Total Care', kicker: 'Healthcare Collateral · Total Care Pharmacy',
-    desc: 'Patient care brochures, wellness guides, clinical service cards, and branded pharmacy stationery.',
-    tags: ['Healthcare Collateral', 'Patient Guides', 'Print Stationery'], bg: '#182422', fg: '#E8E4E0', acc: '#4ECCA3', items: GD.straticapharma },
-  { k: 'posters', name: 'Posters & logos', label: 'Posters & logos', kicker: 'Events · Identity',
+  { k: 'qodoro', name: 'Qodoro <em>Realty</em>', label: 'Qodoro Realty', kicker: 'Print Collateral · Luxury Real Estate',
+    desc: 'Brochures and property lookbooks for a real-estate brand built on warm tones, editorial type, and calm architecture.',
+    tags: ['Editorial layouts', 'Property Brochures', 'Brand guidelines'], bg: '#1A1818', fg: '#E8E4E0', acc: '#C4B0B0', items: pick(GD.qodoro, ['qod-1','qod-16','qod-17','qod-26','qod-27','qod-31','qod-32','qod-center','qod-left']) },
+  { k: 'himspring', name: '<em>Himspring</em>', label: 'Himspring', kicker: 'Packaging & Print · Premium Water',
+    desc: 'Packaging and print materials for a premium Himalayan water brand: clean bottle labels, carton packaging, and promotional banners.',
+    tags: ['Packaging design', 'Print Collateral', 'Brand Identity'], bg: '#E8E4E0', fg: '#1A1818', acc: '#6B4F4F', items: pick(GD.himspring, ['him-27','him-28','him-31','him-32','him-33','him-37','him-43','him-44','him-45','him-47','him-49']) },
+  { k: 'posters', name: 'Posters & logos', label: 'Posters & logos', kicker: 'Events & Identity · Print Materials',
     desc: 'Posters for college fests and clubs, festive creatives and logo marks, from bold type-led launches to clean identities.',
     tags: ['Event posters', 'Logo design', 'Typography'], bg: '#1A1818', fg: '#E8E4E0', acc: '#C4B0B0',
     items: GD.posters.filter(p => p.k !== 'pos-theme-launch').concat(GD.logos.map(l => Object.assign({ dark: true }, l))) }
