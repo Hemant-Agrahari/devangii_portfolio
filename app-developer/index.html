@@ -1713,17 +1713,6 @@
       <nav aria-label="Primary">
         <ul>
           <li><button data-nav="home">Home</button></li>
-          <li><button data-nav="door:0">Web Development</button></li>
-          <li><button data-nav="door:1" aria-current=page>App Development</button></li>
-          <li><button data-nav="door:2">UI/UX Design</button></li>
-          <li><button data-nav="door:3">Graphic Design</button></li>
-          <li><button data-nav="about">My story</button></li>
-          <li><button data-nav="contact">Contact</button></li>
-        </ul>
-      </nav>
-      <nav aria-label="Primary">
-        <ul>
-          <li><button data-nav="home">Home</button></li>
           <li><button data-nav="door:0">UIUX Design</button></li>
           <li><button data-nav="door:1">Graphics Design</button></li>
           <li><button data-nav="door:2">Print Media</button></li>
@@ -1748,10 +1737,6 @@
             <path d="M18 6 6 18M6 6l12 12" />
           </svg></button>
       </div>
-      <div class="rn__plist"><button data-nav="home">Home</button><button data-nav="door:0">Web
-          Development</button><button data-nav="door:1" aria-current=page>App Development</button><button
-          data-nav="door:2">UI/UX Design</button><button data-nav="door:3">Graphic Design</button><button
-          data-nav="about">My story</button><button data-nav="contact">Contact</button></div>
       <div class="rn__plist"><button data-nav="home">Home</button><button data-nav="door:0">UIUX Design</button><button
           data-nav="door:1">Graphics Design</button><button data-nav="door:2">Print Media</button><button
           data-nav="door:3" aria-current=page>Mobile App UI</button><button data-nav="about">My story</button><button
@@ -2332,7 +2317,7 @@
     (() => {
       const root = document.documentElement, EMBED = root.classList.contains('embed');
       const HOME = '../#works'.replace(/#works$/, '');
-      const SLUGS = ["web-developer", "app-developer", "ui-ux-designer", "graphic-designer", "photographer"];
+      const SLUGS = ["ui-ux-designer", "graphic-designer", "print-media", "app-developer", "photographer"];
       const go = to => {
         if (to === 'top') { scrollTo({ top: 0, behavior: 'smooth' }); return; }
         if (EMBED) { parent.postMessage({ wall: 'go', to }, location.origin === 'null' ? '*' : location.origin); return; }

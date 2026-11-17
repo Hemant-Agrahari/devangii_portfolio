@@ -5485,7 +5485,6 @@
             <ul class="work">
               <li><a href="ui-ux-designer/" data-door="0">UIUX Design</a></li>
               <li><a href="graphic-designer/" data-door="1">Graphics Design</a></li>
-              <li><a href="graphic-designer/" data-door="2">Print Media</a></li>
               <li><a href="print-media/" data-door="2">Print Media</a></li>
               <li><a href="app-developer/" data-door="3">Mobile App UI</a></li>
             </ul>
@@ -6473,7 +6472,8 @@
       const ROUTES = ['ui-ux-designer/', 'graphic-designer/', 'print-media/', 'app-developer/', 'photographer/'];
       const SLUGS = ['ui-ux-designer', 'graphic-designer', 'print-media', 'mobile-app-ui', 'photographer'];
       // a link like …#photographer lands at the doors and walks straight through that one
-      const HASH_DOOR = SLUGS.indexOf(decodeURIComponent(location.hash.slice(1)));
+      const rawHash = decodeURIComponent(location.hash.slice(1));
+      const HASH_DOOR = rawHash === 'app-developer' ? 3 : SLUGS.indexOf(rawHash);
       if (HASH_DOOR >= 0) {
         try { history.replaceState(null, '', location.pathname + location.search + '#works'); } catch (e) { }
         addEventListener('intro:ready', () => { warm(HASH_DOOR); setTimeout(() => window.openDoor(HASH_DOOR), 650); }, { once: true });
@@ -6522,9 +6522,10 @@
 
       // fetch the page behind a door as soon as someone shows interest in it
       const warmed = new Set();
-      const warm = i => {
-        if (warmed.has(i)) return; warmed.add(i);
-        loadRoom(i);
+      const warm = (i, force) => {
+        if (!force && warmed.has(i)) return;
+        warmed.add(i);
+        loadRoom(i, force);
       };
 
       /* The photo wall is loaded, fully painted, inside this page while you stand at the doors.
@@ -6533,15 +6534,32 @@
       // every door has its own room, loaded inside this page, so stepping in and coming back never reloads anything
       const frames = [], ready = [], TITLES = ['UIUX Design', 'Graphics Design', 'Print Media', 'Mobile App UI Designer', 'Photography'];
       let frame = null, frameReady = false, cur = 0, inWall = false, pushed = false, savedGap = null;
-      function loadRoom(i) {
-        if (frames[i]) return;
+      function loadRoom(i, force) {
+        if (frames[i]) {
+          if (force) {
+            ready[i] = false;
+            if (i === cur) frameReady = false;
+            frames[i].addEventListener('load', () => {
+              ready[i] = true;
+              if (i === cur) frameReady = true;
+              frames[i].contentWindow?.postMessage({ wall: 'mode', mode: root.dataset.mode === 'dark' ? 'dark' : 'light' }, location.origin === 'null' ? '*' : location.origin);
+            }, { once: true });
+            frames[i].src = ROUTES[i] + '?embed&_t=' + Date.now();
+          }
+          return;
+        }
         const f = document.createElement('iframe');
-        f.src = ROUTES[i] + '?embed';
+        f.src = ROUTES[i] + '?embed&_t=' + Date.now();
         f.title = TITLES[i];
         f.tabIndex = -1;
         f.addEventListener('load', () => { ready[i] = true; if (i === cur) frameReady = true; f.contentWindow?.postMessage({ wall: 'mode', mode: root.dataset.mode === 'dark' ? 'dark' : 'light' }, location.origin === 'null' ? '*' : location.origin); }, { once: true });
         frames[i] = f; wallv.appendChild(f);
       }
+      window.addEventListener('focus', () => {
+        if (!inWall && !busy) {
+          frames.forEach((f, k) => { if (f) warm(k, true); });
+        }
+      });
       const pick = i => { cur = i; frame = frames[i]; frameReady = !!ready[i]; frames.forEach((f, k) => f && f.classList.toggle('cur', k === i)); };
       const toWall = msg => { try { frame?.contentWindow?.postMessage(msg, location.origin === 'null' ? '*' : location.origin); } catch (e) { } };
       // start fetching the wall once the doors are near, so a click never waits
@@ -6714,7 +6732,7 @@
         const far = Math.abs(pageYOffset - top) > 4;
         if (far) { if (lenis) lenis.scrollTo(top, { duration: .9, easing: x => 1 - Math.pow(1 - x, 3) }); else scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' }); }
         const t0 = performance.now();
-        warm(i);
+        warm(i, true);
         const settle = () => {
           if (Math.abs(pageYOffset - top) > 24 && performance.now() - t0 < 1500) return requestAnimationFrame(settle);   // open as the scroll lands, not after its tail
           if (!ready[i] && performance.now() - t0 < 4000) return requestAnimationFrame(settle);   // the room is still loading
@@ -6732,7 +6750,7 @@
       };
       function enter(i) {
         if (busy) return;
-        busy = true; warm(i); lift();
+        busy = true; warm(i, true); lift();
         showBadge(false);
         window.__doorHover?.(-1); sec.classList.remove('focus'); units.forEach(u => u.classList.remove('on')); dinfo.classList.remove('on');
         const d = doorsState[i];

@@ -2378,7 +2378,7 @@
     (() => {
       const root = document.documentElement, EMBED = root.classList.contains('embed');
       const HOME = '../#works'.replace(/#works$/, '');
-      const SLUGS = ["web-developer", "app-developer", "ui-ux-designer", "graphic-designer", "photographer"];
+      const SLUGS = ["ui-ux-designer", "graphic-designer", "print-media", "app-developer", "photographer"];
       const go = to => {
         if (to === 'top') { scrollTo({ top: 0, behavior: 'smooth' }); return; }
         if (EMBED) { parent.postMessage({ wall: 'go', to }, location.origin === 'null' ? '*' : location.origin); return; }
