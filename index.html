@@ -4790,6 +4790,180 @@
         transition: opacity .2s ease, visibility 0s linear .2s
       }
     }
+
+    /* ---------- Section: Skills & Capabilities ---------- */
+    .skills {
+      position: relative;
+      z-index: 2;
+      padding: clamp(5rem, 8vw, 7.5rem) 0;
+      background: var(--bg);
+      border-top: 1px solid rgba(var(--fg-rgb), .08);
+    }
+
+    .skills__in {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 4vw, 3.75rem);
+    }
+
+    .skills__head {
+      max-width: 46rem;
+    }
+
+    .skills__h {
+      margin-top: .75rem;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      letter-spacing: -.03em;
+      line-height: 1.05;
+      color: var(--fg);
+    }
+
+    .skills__sub {
+      margin-top: 1rem;
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
+      line-height: 1.6;
+      color: rgba(var(--fg-rgb), .7);
+    }
+
+    .skills__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .skills__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+    }
+
+    .skills__card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: clamp(1.5rem, 2.8vw, 2.25rem);
+      border-radius: 1.75rem;
+      background: rgba(var(--fg-rgb), .03);
+      border: 1px solid rgba(var(--fg-rgb), .09);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform .35s cubic-bezier(.16, 1, .3, 1), border-color .35s ease, box-shadow .35s ease;
+    }
+
+    html[data-mode="dark"] .skills__card {
+      background: rgba(255, 255, 255, .03);
+      border-color: rgba(255, 255, 255, .07);
+    }
+
+    @media (hover: hover) {
+      .skills__card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(var(--fg-rgb), .22);
+        box-shadow: 0 16px 36px -16px rgba(0, 0, 0, .12);
+      }
+
+      html[data-mode="dark"] .skills__card:hover {
+        border-color: rgba(255, 255, 255, .18);
+        box-shadow: 0 16px 36px -16px rgba(0, 0, 0, .45);
+      }
+    }
+
+    .skills__card-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .skills__card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1rem;
+      background: rgba(var(--fg-rgb), .06);
+      color: var(--fg);
+      flex-shrink: 0;
+    }
+
+    .skills__card-icon svg {
+      width: 1.35rem;
+      height: 1.35rem;
+    }
+
+    .skills__card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: var(--fg);
+    }
+
+    .skills__card-desc {
+      font-size: .875rem;
+      color: rgba(var(--fg-rgb), .6);
+      margin-top: .15rem;
+    }
+
+    .skills__pills {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .skills__pills li {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem .95rem;
+      border-radius: 9999px;
+      background: rgba(var(--fg-rgb), .05);
+      border: 1px solid rgba(var(--fg-rgb), .09);
+      font-size: .9125rem;
+      font-weight: 500;
+      color: var(--fg);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    @media (hover: hover) {
+      .skills__pills li:hover {
+        background: rgba(var(--fg-rgb), .09);
+        transform: translateY(-1px);
+      }
+    }
+
+    .dot-tool {
+      width: .55rem;
+      height: .55rem;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot--figma {
+      background: #F24E1E;
+      box-shadow: 0 0 8px rgba(242, 78, 30, .4);
+    }
+
+    .dot--ps {
+      background: #31A8FF;
+      box-shadow: 0 0 8px rgba(49, 168, 255, .4);
+    }
+
+    .dot--ai {
+      background: #FF9A00;
+      box-shadow: 0 0 8px rgba(255, 154, 0, .4);
+    }
+
+    .dot--canva {
+      background: #00C4CC;
+      box-shadow: 0 0 8px rgba(0, 196, 204, .4);
+    }
   </style>
   <script>try { if (localStorage.getItem('rishi-mode') === 'dark') { document.documentElement.dataset.mode = 'dark'; document.querySelector('meta[name=theme-color]') } } catch (e) { }</script>
   <script>
@@ -4868,6 +5042,8 @@
                 Media</span></button></li>
           <li><button data-door="3"><span data-h="y 0 -2|o .8 1" data-hs="320 22" data-ht="button">Mobile App
                 UI</span></button></li>
+          <li><button data-go="skills"><span data-h="y 0 -2|o .8 1" data-hs="320 22"
+                data-ht="button">Skills</span></button></li>
           <li><button data-go="about"><span data-h="y 0 -2|o .8 1" data-hs="320 22" data-ht="button">My
                 story</span></button></li>
           <li><button data-contact><span data-h="y 0 -2|o .8 1" data-hs="320 22"
@@ -5082,6 +5258,113 @@
       </div>
     </section>
 
+    <!-- ============ Skills & Capabilities ============ -->
+    <section id="skills" class="skills" aria-labelledby="skillsTitle">
+      <div class="shell skills__in">
+        <div class="skills__head">
+          <p class="eyebrow">Skills &amp; Capabilities</p>
+          <h2 class="skills__h" id="skillsTitle">Expertise crafted across digital &amp; print.</h2>
+          <p class="skills__sub">From interactive user flows and mobile UI to brand visual identities and print
+            collateral, backed by modern design tools.</p>
+        </div>
+        <div class="skills__grid">
+          <!-- Card 1: UI & Mobile App Design -->
+          <div class="skills__card">
+            <div class="skills__card-head">
+              <span class="skills__card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18" />
+                  <path d="M9 21V9" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="skills__card-title">UI &amp; Mobile App UI</h3>
+                <p class="skills__card-desc">User-centric digital interfaces &amp; systems</p>
+              </div>
+            </div>
+            <ul class="skills__pills">
+              <li>Website and Mobile App UI</li>
+              <li>Wireframing and Prototyping</li>
+              <li>Interaction Design</li>
+              <li>Design Systems and Style Guides</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Tools & Software -->
+          <div class="skills__card">
+            <div class="skills__card-head">
+              <span class="skills__card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                  <path d="M2 2l7.586 7.586" />
+                  <circle cx="11" cy="11" r="2" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="skills__card-title">Tools &amp; Software</h3>
+                <p class="skills__card-desc">Primary design and asset editing suite</p>
+              </div>
+            </div>
+            <ul class="skills__pills">
+              <li><span class="dot-tool dot--figma"></span>Figma</li>
+              <li><span class="dot-tool dot--ps"></span>Adobe Photoshop</li>
+              <li><span class="dot-tool dot--ai"></span>Adobe Illustrator</li>
+              <li><span class="dot-tool dot--canva"></span>Canva</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Graphics & Print Media -->
+          <div class="skills__card">
+            <div class="skills__card-head">
+              <span class="skills__card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="skills__card-title">Graphics &amp; Print Design</h3>
+                <p class="skills__card-desc">Digital marketing &amp; tangible collateral</p>
+              </div>
+            </div>
+            <ul class="skills__pills">
+              <li>Social Media Creatives</li>
+              <li>Print Design (Brochure, Poster, Banner)</li>
+              <li>Layout and Composition</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: UX & Design Foundations -->
+          <div class="skills__card">
+            <div class="skills__card-head">
+              <span class="skills__card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="skills__card-title">UX &amp; Design Foundations</h3>
+                <p class="skills__card-desc">Usability principles &amp; visual harmony</p>
+              </div>
+            </div>
+            <ul class="skills__pills">
+              <li>UX Principles and Usability</li>
+              <li>Typography and Color Theory</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="story" aria-labelledby="storyTitle" style="--n:4">
       <div class="story__amb" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="story__track">
@@ -5138,8 +5421,6 @@
                       implementation matches approved designs.</li>
                   </ul>
                 </li>
-                <li class="ch" data-y="2023" data-when="2023 — 2024">
-                  <p class="ch__date">2023 — 2024</p>
                 <li class="ch" data-y="2023" data-when="2023 — 2026">
                   <p class="ch__date">2023 — 2026</p>
                   <h3 class="ch__t">Graphic &amp; UI/UX Designer</h3>
@@ -5205,6 +5486,7 @@
               <li><a href="ui-ux-designer/" data-door="0">UIUX Design</a></li>
               <li><a href="graphic-designer/" data-door="1">Graphics Design</a></li>
               <li><a href="graphic-designer/" data-door="2">Print Media</a></li>
+              <li><a href="print-media/" data-door="2">Print Media</a></li>
               <li><a href="app-developer/" data-door="3">Mobile App UI</a></li>
             </ul>
           </div>
@@ -5212,6 +5494,7 @@
             <h3>Navigate</h3>
             <ul>
               <li><a href="./" data-go="home">Home</a></li>
+              <li><a href="./#skills" data-go="skills">Skills</a></li>
               <li><a href="./#about" data-go="about">My story</a></li>
               <li><button data-contact>Contact</button></li>
             </ul>
@@ -5564,7 +5847,7 @@
       setTimeout(() => { el.hidden = true; el.classList.remove('closing'); startScroll(); after?.(); }, 460);
     }
     // nav menu
-    const NAV = [['Home', 'home'], ['Web Development', 0], ['App Development', 1], ['UI/UX Design', 2], ['Graphic Design', 3], ['My story', 'about'], ['Contact', null]];
+    const NAV = [['Home', 'home'], ['UIUX Design', 0], ['Graphics Design', 1], ['Print Media', 2], ['Mobile App UI', 3], ['Skills', 'skills'], ['My story', 'about'], ['Contact', null]];
     const navm = $('#navm');
     $('#navList').innerHTML = NAV.map(([l, id], i) =>
       `<li><button class="navm__item" style="--d:${i * 45 + 80}ms" data-i="${i}"><small>0${i + 1}</small><span>${l}</span></button></li>`).join('');
